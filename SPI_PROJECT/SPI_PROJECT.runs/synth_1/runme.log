@@ -1,0 +1,559 @@
+
+*** Running vivado
+    with args -log SPI_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source SPI_wrapper.tcl
+
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source SPI_wrapper.tcl -notrace
+Command: synth_design -top SPI_wrapper -part xc7a35ticpg236-1L
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35ti'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35ti'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 16728 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 355.730 ; gain = 99.027
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'SPI_wrapper' [D:/digital_design_diploma/projects/SPI/SPI_wrapper.v:1]
+	Parameter MEM_DEPTH bound to: 256 - type: integer 
+	Parameter ADDR_SIZE bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'SPI' [D:/digital_design_diploma/projects/SPI/SPI.v:1]
+	Parameter IDLE bound to: 3'b000 
+	Parameter CHK_CMD bound to: 3'b001 
+	Parameter WRITE bound to: 3'b010 
+	Parameter READ_DATA bound to: 3'b011 
+	Parameter READ_ADDR bound to: 3'b100 
+INFO: [Synth 8-155] case statement is not full and has no default [D:/digital_design_diploma/projects/SPI/SPI.v:20]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/digital_design_diploma/projects/SPI/SPI.v:56]
+INFO: [Synth 8-6155] done synthesizing module 'SPI' (1#1) [D:/digital_design_diploma/projects/SPI/SPI.v:1]
+INFO: [Synth 8-6157] synthesizing module 'RAM' [D:/digital_design_diploma/projects/SPI/RAM.v:1]
+	Parameter MEM_DEPTH bound to: 256 - type: integer 
+	Parameter ADDR_SIZE bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'RAM' (2#1) [D:/digital_design_diploma/projects/SPI/RAM.v:1]
+WARNING: [Synth 8-689] width (1) of port connection 'rx_data' does not match port width (10) of module 'RAM' [D:/digital_design_diploma/projects/SPI/SPI_wrapper.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'SPI_wrapper' (3#1) [D:/digital_design_diploma/projects/SPI/SPI_wrapper.v:1]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 410.305 ; gain = 153.602
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 410.305 ; gain = 153.602
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 410.305 ; gain = 153.602
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a35ticpg236-1L
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [D:/digital_design_diploma/projects/SPI/basys_master.xdc]
+Finished Parsing XDC File [D:/digital_design_diploma/projects/SPI/basys_master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/digital_design_diploma/projects/SPI/basys_master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/SPI_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/SPI_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 759.086 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 759.086 ; gain = 502.383
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35ticpg236-1L
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 759.086 ; gain = 502.383
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 759.086 ; gain = 502.383
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'SPI'
+INFO: [Synth 8-5544] ROM "rx_valid" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_sequential_next_state_reg' [D:/digital_design_diploma/projects/SPI/SPI.v:22]
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_onehot_next_state_reg' [D:/digital_design_diploma/projects/SPI/SPI.v:22]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                              000 |                              000
+                 CHK_CMD |                              001 |                              001
+                   WRITE |                              010 |                              010
+               READ_ADDR |                              011 |                              100
+               READ_DATA |                              100 |                              011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using encoding 'sequential' in module 'SPI'
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_sequential_next_state_reg' [D:/digital_design_diploma/projects/SPI/SPI.v:22]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 759.086 ; gain = 502.383
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	               10 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---RAMs : 
+	               2K Bit         RAMs := 1     
++---Muxes : 
+	   2 Input     10 Bit        Muxes := 2     
+	   5 Input     10 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 4     
+	   5 Input      4 Bit        Muxes := 1     
+	   5 Input      3 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 7     
+	   2 Input      1 Bit        Muxes := 16    
+	   5 Input      1 Bit        Muxes := 9     
+	   4 Input      1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module SPI 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	               10 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input     10 Bit        Muxes := 2     
+	   5 Input     10 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 4     
+	   5 Input      4 Bit        Muxes := 1     
+	   5 Input      3 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 7     
+	   2 Input      1 Bit        Muxes := 16    
+	   5 Input      1 Bit        Muxes := 9     
+Module RAM 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---RAMs : 
+	               2K Bit         RAMs := 1     
++---Muxes : 
+	   4 Input      1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-6014] Unused sequential element spi/rx_data_reg was removed.  [D:/digital_design_diploma/projects/SPI/SPI.v:64]
+INFO: [Synth 8-3886] merging instance 'ram/internal_buffer_reg[1]' (FDRE) to 'ram/internal_buffer_reg[2]'
+INFO: [Synth 8-3886] merging instance 'ram/internal_buffer_reg[2]' (FDRE) to 'ram/internal_buffer_reg[3]'
+INFO: [Synth 8-3886] merging instance 'ram/internal_buffer_reg[3]' (FDRE) to 'ram/internal_buffer_reg[4]'
+INFO: [Synth 8-3886] merging instance 'ram/internal_buffer_reg[4]' (FDRE) to 'ram/internal_buffer_reg[5]'
+INFO: [Synth 8-3886] merging instance 'ram/internal_buffer_reg[5]' (FDRE) to 'ram/internal_buffer_reg[6]'
+INFO: [Synth 8-3886] merging instance 'ram/internal_buffer_reg[6]' (FDRE) to 'ram/internal_buffer_reg[7]'
+INFO: [Synth 8-3886] merging instance 'ram/internal_buffer_reg[7]' (FDRE) to 'ram/tx_valid_reg'
+INFO: [Synth 8-3886] merging instance 'i_0/ram/tx_data_reg[7]' (FDRE) to 'i_0/ram/tx_data_reg[6]'
+INFO: [Synth 8-3886] merging instance 'i_0/ram/tx_data_reg[6]' (FDRE) to 'i_0/ram/tx_data_reg[5]'
+INFO: [Synth 8-3886] merging instance 'i_0/ram/tx_data_reg[5]' (FDRE) to 'i_0/ram/tx_data_reg[4]'
+INFO: [Synth 8-3886] merging instance 'i_0/ram/tx_data_reg[4]' (FDRE) to 'i_0/ram/tx_data_reg[3]'
+INFO: [Synth 8-3886] merging instance 'i_0/ram/tx_data_reg[3]' (FDRE) to 'i_0/ram/tx_data_reg[2]'
+INFO: [Synth 8-3886] merging instance 'i_0/ram/tx_data_reg[2]' (FDRE) to 'i_0/ram/tx_data_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ram/tx_data_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ram/tx_data_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ram/tx_valid_reg )
+WARNING: [Synth 8-3332] Sequential element (ram/internal_buffer_reg[0]) is unused and will be removed from module SPI_wrapper.
+WARNING: [Synth 8-3332] Sequential element (spi/rx_valid_reg) is unused and will be removed from module SPI_wrapper.
+WARNING: [Synth 8-3332] Sequential element (ram/tx_data_reg[1]) is unused and will be removed from module SPI_wrapper.
+WARNING: [Synth 8-3332] Sequential element (ram/tx_data_reg[0]) is unused and will be removed from module SPI_wrapper.
+WARNING: [Synth 8-3332] Sequential element (ram/tx_valid_reg) is unused and will be removed from module SPI_wrapper.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 759.086 ; gain = 502.383
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:34 ; elapsed = 00:00:37 . Memory (MB): peak = 759.086 ; gain = 502.383
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:37 . Memory (MB): peak = 768.367 ; gain = 511.664
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:34 ; elapsed = 00:00:37 . Memory (MB): peak = 777.918 ; gain = 521.215
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:35 ; elapsed = 00:00:38 . Memory (MB): peak = 777.918 ; gain = 521.215
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:35 ; elapsed = 00:00:38 . Memory (MB): peak = 777.918 ; gain = 521.215
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:35 ; elapsed = 00:00:38 . Memory (MB): peak = 777.918 ; gain = 521.215
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:35 ; elapsed = 00:00:38 . Memory (MB): peak = 777.918 ; gain = 521.215
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:35 ; elapsed = 00:00:38 . Memory (MB): peak = 777.918 ; gain = 521.215
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:35 ; elapsed = 00:00:38 . Memory (MB): peak = 777.918 ; gain = 521.215
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |BUFG |     1|
+|2     |LUT1 |     1|
+|3     |LUT2 |     3|
+|4     |LUT3 |     3|
+|5     |LUT4 |     5|
+|6     |LUT5 |     1|
+|7     |LUT6 |     4|
+|8     |FDRE |     9|
+|9     |LD   |     3|
+|10    |IBUF |     4|
+|11    |OBUF |     1|
++------+-----+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |    35|
+|2     |  spi    |SPI    |    29|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:35 ; elapsed = 00:00:38 . Memory (MB): peak = 777.918 ; gain = 521.215
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 9 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 777.918 ; gain = 172.434
+Synthesis Optimization Complete : Time (s): cpu = 00:00:35 ; elapsed = 00:00:38 . Memory (MB): peak = 777.918 ; gain = 521.215
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 7 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 3 instances were transformed.
+  LD => LDCE: 3 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+44 Infos, 10 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:37 ; elapsed = 00:00:40 . Memory (MB): peak = 780.395 ; gain = 536.742
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint 'D:/digital_design_diploma/projects/SPI/SPI_PROJECT/SPI_PROJECT.runs/synth_1/SPI_wrapper.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file SPI_wrapper_utilization_synth.rpt -pb SPI_wrapper_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 780.395 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Tue Mar 12 02:53:21 2024...
+
+*** Running vivado
+    with args -log SPI_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source SPI_wrapper.tcl
+
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+ERROR: [Common 17-249] Param 'device.trackDeviceDataLoading' is already registered
+ERROR: [Common 17-249] Param 'device.disableTemplateLoading' is already registered
+ERROR: [Common 17-249] Param 'device.loadAllNodeTemplates' is already registered
+ERROR: [Common 17-249] Param 'device.disableCostCodes' is already registered
+ERROR: [Common 17-249] Param 'device.hotfabricfactor' is already registered
+ERROR: [Common 17-249] Param 'device.precomputedNodes' is already registered
+ERROR: [Common 17-249] Param 'device.dontDisconnectWires' is already registered
+ERROR: [Common 17-249] Param 'device.modifyReserveProperty' is already registered
+ERROR: [Common 17-249] Param 'device.leakDevices' is already registered
+ERROR: [Common 17-249] Param 'device.derivedDieDevice' is already registered
+ERROR: [Common 17-249] Param 'device.mungeCookedNames' is already registered
+ERROR: [Common 17-249] Param 'device.disableOracleGroups' is already registered
+ERROR: [Common 17-249] Param 'device.enablePhysicalDataLoad' is already registered
+ERROR: [Common 17-249] Param 'device.enablePhysicalDataDump' is already registered
+ERROR: [Common 17-249] Param 'arch.debugParse' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.cfgFile' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.TrimUnusedRouting' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.TrimUnusedRoutingVerbose' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.TrimUnusedRoutingIgnoreSites' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.TrimUnusedRoutingSliceTypes' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.cfg' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.elbertCLBXYSize' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.intTileColsPerIntColumn' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.Monitor' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.ReportFileName' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.GVerbose' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.Verbose' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.QORDefaults' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.GNLDefaults' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.Threads' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.logfile' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.addInterposerRouting' is already registered
+ERROR: [Common 17-249] Param 'device.externalEstimator' is already registered
+ERROR: [Common 17-249] Param 'device.mappingFile' is already registered
+ERROR: [Common 17-249] Param 'device.xmlDstFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.xmlDstFile_5lev' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.delayModel' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.delayModel_5lev' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.floorplan' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.intXml' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.muxLayout' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.overwriteTileGridDistWithCSV' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.paspdFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.nonlibPaspdFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.padrFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.padrFileAsText' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.pbPadrFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.libertyFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.evalBlackBoxDelays' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.muxequivsFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.lagunaArchFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.lagunaDevice' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.lagunaDeviceFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.enableLagunaFlow' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.dumpLagunaDeviceXML' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.fsrRows' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.pinDlysFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.pinIgnoreFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.overlapIgnoreFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.constSourcesFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.HDXMIallowMuxMissingInLayout' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.dstGenMode' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.bucketWithCrossings' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.bucketPostPlaceWithCalc' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.bucketPostRouteWithCalc' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.epsReportEstimatedDelay' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.dumpGrids' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.bypassDistanceDelays' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.boundingBoxDelay' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.nominalTileNames' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.estDelayWithFnPenalty' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.noCrossSLREstDelay' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.longestHorizDelayModel' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.longestVertDelayModel' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.altRoutedTiming' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.interconnectBuilderTasks' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.trimCenterColumn' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.belContextWrite' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.netContextWrite' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.pipContextWrite' is already registered
+ERROR: [Common 17-249] Param 'device.clbDelayScale' is already registered
+ERROR: [Common 17-249] Param 'device.bramDelayScale' is already registered
+ERROR: [Common 17-249] Param 'device.dspDelayScale' is already registered
+ERROR: [Common 17-249] Param 'device.restDelayScale' is already registered
+ERROR: [Common 17-249] Param 'device.xmlUseCrossingPenalty' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.archXngFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.deviceXngFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.deviceXgdFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.veamMapFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.belTimingSetFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.belContextMapFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.netContextMapFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.netTimingSetFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.siteTimingSetFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.sitemapFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.secondaryPlacementFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.secondaryPinPlacementFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.pkgSsoFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.progDelayCfgFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.idcMapFile' is already registered
+INFO: [Common 17-14] Message 'Common 17-249' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+ERROR: [Common 17-39] 'load_features' failed due to earlier errors.
+
+    while executing
+"load_features base core vivado tclstore writecfgmem"
+    (file "C:/Xilinx/Vivado/2018.2/lib/scripts/rdi/products/Vivado.tcl" line 10)
+INFO: [Common 17-206] Exiting Vivado at Tue Mar 12 03:05:49 2024...
+
+*** Running vivado
+    with args -log SPI_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source SPI_wrapper.tcl
+
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source SPI_wrapper.tcl -notrace
+Command: synth_design -top SPI_wrapper -part xc7a35ticpg236-1L
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35ti'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35ti'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 8268 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 356.094 ; gain = 99.301
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'SPI_wrapper' [D:/digital_design_diploma/projects/SPI/SPI_wrapper.v:1]
+	Parameter MEM_DEPTH bound to: 256 - type: integer 
+	Parameter ADDR_SIZE bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'SPI' [D:/digital_design_diploma/projects/SPI/SPI.v:1]
+	Parameter IDLE bound to: 3'b000 
+	Parameter CHK_CMD bound to: 3'b001 
+	Parameter WRITE bound to: 3'b010 
+	Parameter READ_DATA bound to: 3'b011 
+	Parameter READ_ADDR bound to: 3'b100 
+INFO: [Synth 8-155] case statement is not full and has no default [D:/digital_design_diploma/projects/SPI/SPI.v:20]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/digital_design_diploma/projects/SPI/SPI.v:56]
+INFO: [Synth 8-6155] done synthesizing module 'SPI' (1#1) [D:/digital_design_diploma/projects/SPI/SPI.v:1]
+INFO: [Synth 8-6157] synthesizing module 'RAM' [D:/digital_design_diploma/projects/SPI/RAM.v:1]
+	Parameter MEM_DEPTH bound to: 256 - type: integer 
+	Parameter ADDR_SIZE bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'RAM' (2#1) [D:/digital_design_diploma/projects/SPI/RAM.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'SPI_wrapper' (3#1) [D:/digital_design_diploma/projects/SPI/SPI_wrapper.v:1]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 410.789 ; gain = 153.996
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 410.789 ; gain = 153.996
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 410.789 ; gain = 153.996
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a35ticpg236-1L
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Caught ... exception.
+Caught ... exception.
+ERROR: [Timing 38-246] Caught exception 'Out of memory' while reading timing library and applying constraints.
+Resolution: For technical support on this issue, please visit http://www.xilinx.com/support
+INFO: [Common 17-83] Releasing license: Synthesis
+12 Infos, 0 Warnings, 0 Critical Warnings and 2 Errors encountered.
+synth_design failed
+ERROR: [Timing 38-17] An error was encountered initializing the timing graph. Analysis will not be performed.
+Resolution: For technical support on this issue, please visit http://www.xilinx.com/support
+INFO: [Common 17-206] Exiting Vivado at Tue Mar 12 03:06:50 2024...
